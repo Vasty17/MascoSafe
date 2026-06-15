@@ -90,10 +90,10 @@ export default function ReportDetail({ report, onBack, onAlertMessage }: ReportD
   const theme = getCategoryTheme(report.category);
 
   return (
-    <div className="relative w-full max-w-sm mx-auto bg-background-custom min-h-screen text-on-background shadow-lg overflow-x-hidden">
+    <div className="absolute inset-0 bg-background-custom flex flex-col overflow-hidden text-on-background">
       
       {/* Floating Top Header bar */}
-      <header className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-4 pointer-events-none">
+      <header className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-4 py-4 pointer-events-none">
         <button 
           onClick={onBack}
           aria-label="Volver" 
@@ -112,8 +112,9 @@ export default function ReportDetail({ report, onBack, onAlertMessage }: ReportD
         </div>
       </header>
 
-      {/* Hero Pet Image Section */}
-      <section className="relative w-full h-[350px] bg-slate-900 overflow-hidden">
+      <div className="flex-1 overflow-y-auto no-scrollbar pb-24">
+        {/* Hero Pet Image Section */}
+        <section className="relative w-full h-[350px] bg-slate-900 overflow-hidden">
         {report.image ? (
           <img 
             alt={report.petName || "Detalle mascota"} 
@@ -246,10 +247,11 @@ export default function ReportDetail({ report, onBack, onAlertMessage }: ReportD
             <MessageSquare className="w-4 h-4" />
           </button>
         </div>
-      </section>
+        </section>
+      </div>
 
       {/* Sticky Call / Contact Buttons Bottom Nav Floating Overlay */}
-      <div className="fixed bottom-0 left-0 right-0 max-w-sm mx-auto bg-white/90 backdrop-blur-md border-t border-slate-100 p-4 pb-safe-bottom z-40 shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] rounded-t-xl">
+      <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-100 p-4 pb-safe-bottom z-40 shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] rounded-t-xl">
         <div className="flex gap-3">
           <button 
             onClick={handleCall}

@@ -170,7 +170,7 @@ export default function App() {
         )}
 
         {/* View container slot */}
-        <div className="flex-1 w-full h-full relative overflow-y-auto no-scrollbar pb-16">
+        <div className="flex-1 w-full h-full relative overflow-hidden">
           
           {currentView === 'auth' && (
             <AuthScreen 
@@ -183,7 +183,7 @@ export default function App() {
             <div className="w-full h-full relative overflow-hidden">
               
               {/* Custom Header with Profile Info */}
-              <header className="bg-white/95 backdrop-blur-md shadow-sm fixed top-0 w-full max-w-sm px-4 h-16 z-40 transition-all border-b border-[#eeeef0] flex items-center justify-between">
+              <header className="bg-white/95 backdrop-blur-md shadow-sm absolute top-0 left-0 right-0 px-4 h-16 z-40 transition-all border-b border-[#eeeef0] flex items-center justify-between">
                 <button 
                   onClick={() => setCurrentView('profile')}
                   className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm scale-95 active:scale-90 transition-all focus:outline-none focus:ring-2 focus:ring-primary-container shrink-0"
@@ -350,10 +350,10 @@ export default function App() {
 
           {currentView === 'profile' && currentUser && (
             /* ================= PERSONAL PROFILE DASHBOARD SCREEN ================= */
-            <div className="w-full min-h-full bg-background-custom font-sans flex flex-col">
+            <div className="w-full h-full bg-background-custom font-sans flex flex-col relative overflow-hidden">
               
               {/* Header block */}
-              <header className="bg-white/95 backdrop-blur-md shadow-sm fixed top-0 w-full max-w-sm px-4 h-16 z-40 transition-all border-b border-[#eeeef0] flex items-center justify-between">
+              <header className="bg-white/95 backdrop-blur-md shadow-sm absolute top-0 left-0 right-0 px-4 h-16 z-40 transition-all border-b border-[#eeeef0] flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Heart className="w-5 h-5 text-primary shrink-0 fill-primary/10" />
                   <span className="font-bold text-slate-800 text-sm">Mi Perfil Mascosafe</span>
@@ -368,7 +368,7 @@ export default function App() {
               </header>
 
               {/* Profile details metrics bento banner */}
-              <div className="pt-20 px-4 flex flex-col gap-6 pb-20">
+              <div className="flex-1 overflow-y-auto pt-16 px-4 flex flex-col gap-6 pb-24 no-scrollbar">
                 <div className="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-[#59b3ef]" />
                   <img alt="User Avatar" src={currentUser.avatar} className="w-20 h-20 rounded-full object-cover border-4 border-[#cae6ff]" />

@@ -112,7 +112,7 @@ export default function AuthScreen({ onLoginSuccess, onAlertMessage }: AuthScree
   };
 
   return (
-    <div className="relative w-full max-w-sm mx-auto bg-background-custom min-h-screen flex flex-col justify-center items-center px-4 py-8 overflow-hidden font-sans">
+    <div className="relative w-full h-full bg-background-custom flex flex-col justify-start items-center px-4 py-8 overflow-y-auto font-sans no-scrollbar">
       
       {/* Decorative ambient blobs in background */}
       <div className="absolute top-[-5%] left-[-10%] w-60 h-60 bg-primary-container rounded-full mix-blend-multiply filter blur-[80px] opacity-35 animate-pulse" />

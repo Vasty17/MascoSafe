@@ -127,10 +127,10 @@ export default function AlertsNotifications({
   });
 
   return (
-    <div className="relative w-full max-w-sm mx-auto bg-background-custom min-h-screen text-on-background pb-32">
+    <div className="absolute inset-0 bg-background-custom flex flex-col overflow-hidden text-on-background">
       
       {/* Dynamic Header App Bar */}
-      <header className="bg-white shadow-sm fixed top-0 w-full max-w-sm z-50 flex justify-between items-center px-4 h-16 border-b border-[#eeeef0]">
+      <header className="bg-white shadow-sm absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-4 h-16 border-b border-[#eeeef0]">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm focus:outline-none">
             <img alt="User profile" className="w-full h-full object-cover" src={userAvatar} />
@@ -143,7 +143,7 @@ export default function AlertsNotifications({
       </header>
 
       {/* Main notifications screen content */}
-      <main className="pt-20 px-4">
+      <main className="flex-1 overflow-y-auto pt-16 pb-20 px-4 no-scrollbar">
         
         {/* Title area */}
         <div className="mb-5 mt-3">
