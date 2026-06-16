@@ -137,7 +137,7 @@ export default function ReportForm({
       </header>
 
       {/* Main Form content wrapper nested below top bar */}
-      <main className="flex-1 overflow-y-auto pt-16 pb-28 px-4 flex flex-col gap-6 no-scrollbar">
+      <main className="flex-1 overflow-y-auto pt-16 pb-40 px-4 flex flex-col gap-6 no-scrollbar">
         
         {/* STEP 1: ¿Qué sucedió? (Category Select Grid) */}
         <section className="flex flex-col gap-3">
@@ -444,7 +444,7 @@ export default function ReportForm({
       </main>
 
       {/* Sticky Bottom publish action overlay */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-slate-100 p-4 pb-safe-bottom z-40 shadow-lg rounded-t-xl">
+      <div className="absolute bottom-16 left-0 right-0 bg-white border-t border-slate-100 p-4 z-40 shadow-lg rounded-t-xl">
         <button
           onClick={handleSubmit}
           className="w-full bg-[#59b3ef] hover:bg-opacity-95 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-sm active-press transition-all focus:outline-none focus:ring-2 focus:ring-[#59b3ef]"

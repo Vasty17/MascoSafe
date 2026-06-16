@@ -112,7 +112,7 @@ export default function ReportDetail({ report, onBack, onAlertMessage }: ReportD
         </div>
       </header>
 
-      <div className="flex-1 overflow-y-auto no-scrollbar pb-24">
+      <div className="flex-1 overflow-y-auto no-scrollbar pb-36">
         {/* Hero Pet Image Section */}
         <section className="relative w-full h-[350px] bg-slate-900 overflow-hidden">
         {report.image ? (
@@ -251,7 +251,7 @@ export default function ReportDetail({ report, onBack, onAlertMessage }: ReportD
       </div>
 
       {/* Sticky Call / Contact Buttons Bottom Nav Floating Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-100 p-4 pb-safe-bottom z-40 shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] rounded-t-xl">
+      <div className="absolute bottom-16 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-100 p-4 z-40 shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] rounded-t-xl">
         <div className="flex gap-3">
           <button 
             onClick={handleCall}

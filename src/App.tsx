@@ -160,15 +160,6 @@ export default function App() {
       {/* Simulation Mobile Device Iframe Window Mockup */}
       <div className="w-full md:max-w-[400px] h-[100dvh] md:h-[840px] bg-background-custom rounded-none md:rounded-[40px] shadow-[0px_24px_50px_rgba(0,0,0,0.5)] overflow-hidden relative flex flex-col border-0 md:border-[10px] border-slate-950">
         
-        {/* Dynamic Glowing Feedback alerts */}
-        {toastMessage && (
-          <div className="absolute top-4 left-4 right-4 bg-slate-900/95 backdrop-blur-md text-white text-xs font-semibold py-3 px-4 rounded-xl shadow-lg z-50 animate-slide-down flex items-center gap-2 border border-slate-800">
-            <span className="text-primary font-bold">●</span>
-            <span className="flex-1 text-slate-100">{toastMessage}</span>
-            <button onClick={() => setToastMessage(null)} className="text-slate-400 font-bold ml-1 hover:text-white">✕</button>
-          </div>
-        )}
-
         {/* View container slot */}
         <div className="flex-1 w-full h-full relative overflow-hidden">
           
@@ -491,7 +482,7 @@ export default function App() {
 
         {/* PERSISTENT BOTTOM NAVIGATION BAR (Visible once authenticated and not selecting location coordinates) */}
         {currentUser && !isSelectingLocationCoords && (
-          <nav className="bg-white/95 backdrop-blur-md shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] absolute bottom-0 left-0 right-0 h-16 z-40 border-t border-slate-100 flex justify-around items-center px-1">
+          <nav className="bg-white/95 backdrop-blur-md shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] absolute bottom-0 left-0 right-0 h-16 z-50 border-t border-slate-100 flex justify-around items-center px-1">
             
             {/* Nav Tab 1: Mapa */}
             <button
@@ -555,6 +546,15 @@ export default function App() {
             </button>
 
           </nav>
+        )}
+
+        {/* Dynamic Glowing Feedback alerts */}
+        {toastMessage && (
+          <div className={`absolute ${currentUser && currentView !== 'auth' ? 'top-20' : 'top-4'} left-4 right-4 bg-slate-900/95 backdrop-blur-md text-white text-xs font-semibold py-3 px-4 rounded-xl shadow-lg z-[100] animate-slide-down flex items-center gap-2 border border-slate-800`}>
+            <span className="text-primary font-bold">●</span>
+            <span className="flex-1 text-slate-100">{toastMessage}</span>
+            <button onClick={() => setToastMessage(null)} className="text-slate-400 font-bold ml-1 hover:text-white">✕</button>
+          </div>
         )}
 
       </div>

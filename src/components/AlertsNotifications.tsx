@@ -143,7 +143,7 @@ export default function AlertsNotifications({
       </header>
 
       {/* Main notifications screen content */}
-      <main className="flex-1 overflow-y-auto pt-16 pb-20 px-4 no-scrollbar">
+      <main className="flex-1 overflow-y-auto pt-16 pb-28 px-4 no-scrollbar">
         
         {/* Title area */}
         <div className="mb-5 mt-3">
