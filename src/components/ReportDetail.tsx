@@ -275,8 +275,8 @@ export default function ReportDetail({ report, onBack, onAlertMessage }: ReportD
 
       {/* Info Message Prompt dialog */}
       {showInfoModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-end justify-center p-4">
-          <div className="bg-white rounded-2xl p-5 w-full max-w-sm shadow-xl animate-slide-up pb-10">
+        <div className="absolute inset-0 bg-black/50 z-50 flex items-end justify-center p-4">
+          <div className="bg-white rounded-2xl p-5 w-full shadow-xl animate-slide-up pb-10">
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-bold text-lg text-primary font-sans flex items-center gap-1.5">
                 💬 Reportar pistas

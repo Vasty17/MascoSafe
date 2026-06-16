@@ -155,10 +155,10 @@ export default function App() {
   });
 
   return (
-    <div className="w-full min-h-screen bg-slate-900 flex justify-center items-center p-0 md:p-6 lg:p-8 antialiased selection:bg-primary-container selection:text-on-primary-container">
+    <div className="w-full min-h-screen bg-slate-900 flex justify-center items-center p-0 md:py-6 lg:py-8 antialiased selection:bg-primary-container selection:text-on-primary-container">
       
       {/* Simulation Mobile Device Iframe Window Mockup */}
-      <div className="w-full max-w-sm h-[844px] md:h-[840px] bg-background-custom rounded-none md:rounded-[40px] shadow-[0px_24px_50px_rgba(0,0,0,0.5)] overflow-hidden relative flex flex-col border-0 md:border-[10px] border-slate-950">
+      <div className="w-full md:max-w-[400px] h-[100dvh] md:h-[840px] bg-background-custom rounded-none md:rounded-[40px] shadow-[0px_24px_50px_rgba(0,0,0,0.5)] overflow-hidden relative flex flex-col border-0 md:border-[10px] border-slate-950">
         
         {/* Dynamic Glowing Feedback alerts */}
         {toastMessage && (
