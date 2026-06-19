@@ -20,8 +20,10 @@ import {
   Phone, 
   Heart, 
   AlertTriangle,
-  Info 
+  Info,
+  QrCode
 } from 'lucide-react';
+import QRScannerScreen from './components/QRScannerScreen';
 
 export default function App() {
   // Authentication session
@@ -295,7 +297,17 @@ export default function App() {
 
               {/* Central Floating Action button overlayed above map (New Report) */}
               {!isSelectingLocationCoords && (
-                <div className="absolute bottom-20 left-0 right-0 flex justify-center z-20 pointer-events-none">
+                <div className="absolute bottom-20 left-0 right-0 flex flex-col items-center gap-4 z-20 pointer-events-none pb-4">
+                  {/* QR Scan Action Button */}
+                  <button
+                    onClick={() => setCurrentView('qr_scanner')}
+                    className="bg-white text-slate-800 shadow-xl hover:shadow-2xl rounded-full w-14 h-14 flex items-center justify-center pointer-events-auto transition-transform active:scale-95 group focus:outline-none"
+                    aria-label="Escanear QR o NFC"
+                  >
+                    <QrCode className="w-6 h-6 text-primary" />
+                  </button>
+
+                  {/* New Report Action Button */}
                   <button 
                     onClick={handleAddNewReportClick}
                     className="bg-[#59b3ef] hover:bg-opacity-95 text-white shadow-xl hover:shadow-[#59b3ef]/20 rounded-full px-5 py-3.5 flex items-center gap-2 pointer-events-auto transition-transform active:scale-95 group focus:outline-none"
@@ -337,6 +349,10 @@ export default function App() {
               reports={reports}
               userAvatar={currentUser.avatar}
             />
+          )}
+
+          {currentView === 'qr_scanner' && currentUser && (
+            <QRScannerScreen onClose={() => setCurrentView('map')} />
           )}
 
           {currentView === 'profile' && currentUser && (
@@ -481,7 +497,7 @@ export default function App() {
         </div>
 
         {/* PERSISTENT BOTTOM NAVIGATION BAR (Visible once authenticated and not selecting location coordinates) */}
-        {currentUser && !isSelectingLocationCoords && (
+        {currentUser && !isSelectingLocationCoords && currentView !== 'qr_scanner' && (
           <nav className="bg-white/95 backdrop-blur-md shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] absolute bottom-0 left-0 right-0 h-16 z-50 border-t border-slate-100 flex justify-around items-center px-1">
             
             {/* Nav Tab 1: Mapa */}
