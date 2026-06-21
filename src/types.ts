@@ -23,4 +23,4 @@ export interface Report {
   status: 'activo' | 'resuelto';
 }
 
-export type ViewType = 'auth' | 'map' | 'report_form' | 'report_detail' | 'notifications' | 'register' | 'profile' | 'qr_scanner';
+export type ViewType = 'auth' | 'map' | 'report_form' | 'report_detail' | 'notifications' | 'register' | 'profile' | 'qr_scanner' | 'directory';

@@ -24,6 +24,7 @@ import {
   QrCode
 } from 'lucide-react';
 import QRScannerScreen from './components/QRScannerScreen';
+import DirectoryScreen from './components/DirectoryScreen';
 
 export default function App() {
   // Authentication session
@@ -355,6 +356,10 @@ export default function App() {
             <QRScannerScreen onClose={() => setCurrentView('map')} />
           )}
 
+          {currentView === 'directory' && currentUser && (
+            <DirectoryScreen onBack={() => setCurrentView('profile')} />
+          )}
+
           {currentView === 'profile' && currentUser && (
             /* ================= PERSONAL PROFILE DASHBOARD SCREEN ================= */
             <div className="w-full h-full bg-background-custom font-sans flex flex-col relative overflow-hidden">
@@ -443,6 +448,14 @@ export default function App() {
                   </div>
                 </div>
 
+                {/* Access to new Directory */}
+                <button
+                  onClick={() => setCurrentView('directory')}
+                  className="w-full bg-[#eaf4fc] text-primary hover:bg-[#d5eafd] border border-[#d5eafd] font-black tracking-wide py-4.5 h-[56px] rounded-2xl flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-primary/20 mb-2"
+                >
+                  <MapIcon className="w-5 h-5" /> EXAMINAR CLÍNICAS Y REFUGIOS
+                </button>
+
                 {/* Directorio de emergencias Chile */}
                 <div>
                   <h4 className="text-sm font-black text-[#1a1c1e] mb-2.5 tracking-tight flex items-center gap-1.5">
@@ -497,7 +510,7 @@ export default function App() {
         </div>
 
         {/* PERSISTENT BOTTOM NAVIGATION BAR (Visible once authenticated and not selecting location coordinates) */}
-        {currentUser && !isSelectingLocationCoords && currentView !== 'qr_scanner' && (
+        {currentUser && !isSelectingLocationCoords && currentView !== 'qr_scanner' && currentView !== 'directory' && (
           <nav className="bg-white/95 backdrop-blur-md shadow-[0px_-8px_24px_rgba(89,179,239,0.06)] absolute bottom-0 left-0 right-0 h-16 z-50 border-t border-slate-100 flex justify-around items-center px-1">
             
             {/* Nav Tab 1: Mapa */}
