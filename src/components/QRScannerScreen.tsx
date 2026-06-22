@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Flashlight, ScanLine, QrCode } from 'lucide-react';
+import { X, ScanLine, QrCode } from 'lucide-react';
 
 interface QRScannerScreenProps {
   onClose: () => void;
@@ -37,13 +37,6 @@ export default function QRScannerScreen({ onClose }: QRScannerScreenProps) {
           aria-label="Cerrar escáner"
         >
           <X className="w-6 h-6" />
-        </button>
-        
-        <button 
-          className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-slate-800 active:scale-95 transition-transform shadow-md"
-          aria-label="Encender linterna"
-        >
-          <Flashlight className="w-6 h-6" />
         </button>
       </header>
 
